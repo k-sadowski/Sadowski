@@ -1,0 +1,81 @@
+/* Case study page styles */
+.cs {
+  padding-block: var(--space-16);
+  max-width: 760px;
+}
+
+.cs__header { margin-bottom: var(--space-12); }
+
+.cs__tag {
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-accent);
+  margin-bottom: var(--space-4);
+}
+
+.cs__title {
+  font-size: clamp(var(--text-2xl), 4vw, var(--text-4xl));
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  margin-bottom: var(--space-4);
+}
+
+.cs__summary {
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-8);
+}
+
+.cs__meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: var(--space-4);
+  padding: var(--space-6);
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+
+.cs__meta dt {
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-1);
+}
+
+.cs__meta dd {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+}
+
+/* Prose styles */
+.prose h2 {
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-bold);
+  margin-top: var(--space-12);
+  margin-bottom: var(--space-4);
+}
+
+.prose p {
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-4);
+  line-height: 1.75;
+}
+
+.prose ul, .prose ol {
+  padding-left: var(--space-6);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-4);
+}
+
+.prose li { margin-bottom: var(--space-2); }
+
+.prose blockquote {
+  border-left: 3px solid var(--color-accent);
+  padding-left: var(--space-4);
+  font-style: italic;
+  color: var(--color-text-muted);
+  margin-block: var(--space-6);
+}
