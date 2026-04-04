@@ -1,13 +1,13 @@
 /* Design tokens — edit these to retheme the whole site */
 :root {
   /* Colors */
-  --color-bg:         #0f0f0f;
-  --color-surface:    #1a1a1a;
-  --color-border:     #2a2a2a;
-  --color-text:       #f0f0f0;
-  --color-text-muted: #888;
-  --color-accent:     #6c63ff;
-  --color-accent-hover: #8b84ff;
+  --color-bg:         #ffffff;
+  --color-surface:    #f5f5f5;
+  --color-border:     #e0e0e0;
+  --color-text:       #111111;
+  --color-text-muted: #666666;
+  --color-accent:     #5b53e8;
+  --color-accent-hover: #4740cc;
 
   /* Typography */
   --font-sans: system-ui, -apple-system, "Segoe UI", sans-serif;
