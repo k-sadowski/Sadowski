@@ -230,7 +230,6 @@ body {
   min-height: calc(100dvh - 88px);
   display: flex;
   align-items: center;
-  padding-block: var(--space-16);
 }
 
 .hero__eyebrow {
