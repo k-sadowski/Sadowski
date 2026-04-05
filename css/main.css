@@ -116,6 +116,23 @@ body {
   transition: font-size var(--transition-base);
 }
 
+.nav__menu-wrap {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.nav__hint {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  color: var(--color-accent);
+  font-family: "Caveat", cursive;
+  font-size: 1.1rem;
+  transform: rotate(-4deg);
+  user-select: none;
+}
+
 .nav__menu-btn {
   display: flex;
   flex-direction: column;
