@@ -15,19 +15,25 @@
   <!-- Navigation -->
   <header id="site-header">
     <nav class="nav container">
-      <a href="#" class="nav__logo">[YN]</a>
-      <button class="nav__menu-btn" aria-label="Toggle menu" aria-expanded="false">
+      <a href="#" class="nav__logo">krzysztof sadowski</a>
+      <button class="nav__menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-drawer">
         <span></span><span></span><span></span>
       </button>
-      <ul class="nav__links" role="list">
-        <li><a href="#about">About</a></li>
-        <li><a href="#work">Work</a></li>
-        <li><a href="#case-studies">Case Studies</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact" class="btn btn--primary">Contact</a></li>
-      </ul>
     </nav>
   </header>
+
+  <!-- Drawer -->
+  <div class="drawer-overlay" id="drawer-overlay" aria-hidden="true"></div>
+  <nav class="drawer" id="nav-drawer" aria-label="Site navigation" aria-hidden="true">
+    <button class="drawer__close" aria-label="Close menu">✕</button>
+    <ul class="drawer__links" role="list">
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#case-studies">Case Studies</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact" class="btn btn--primary">Contact</a></li>
+    </ul>
+  </nav>
 
   <main>
     <!-- Hero -->
