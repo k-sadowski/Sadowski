@@ -83,15 +83,33 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 88px;
+  transition: height var(--transition-base);
+}
+
+#site-header.scrolled .nav {
   height: 60px;
 }
 
+#site-header.scrolled .nav__logo {
+  font-size: var(--text-base);
+}
+
+#site-header {
+  transition: box-shadow var(--transition-base);
+}
+
+#site-header.scrolled {
+  box-shadow: 0 1px 12px rgba(0, 0, 0, 0.06);
+}
+
 .nav__logo {
-  font-size: var(--text-lg);
+  font-size: var(--text-xl);
   font-weight: var(--weight-bold);
   text-decoration: none;
   letter-spacing: -0.02em;
   color: #1a1a1a;
+  transition: font-size var(--transition-base);
 }
 
 .nav__menu-btn {
