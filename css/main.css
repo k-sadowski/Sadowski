@@ -42,9 +42,9 @@ body {
   padding: 0.65rem 1.4rem;
   border-radius: var(--radius-full);
   font-size: var(--text-sm);
-  font-weight: var(--weight-semibold);
+  font-weight: 400;
   text-decoration: none;
-  border: 2px solid transparent;
+  border: 1px solid transparent;
   cursor: pointer;
   transition: background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
 }
@@ -55,16 +55,20 @@ body {
   color: #fff;
 }
 .btn--primary:hover {
-  background: linear-gradient(135deg, #d4541f 0%, var(--color-accent-hover) 100%);
+  background: linear-gradient(135deg, #f0855a 0%, #e06040 100%);
   box-shadow: 0 4px 16px var(--color-accent-glow);
 }
 
 .btn--ghost {
   background: transparent;
-  border-color: var(--color-border);
-  color: var(--color-text);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
 }
-.btn--ghost:hover { border-color: var(--color-text-muted); }
+.btn--ghost:hover {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #fff;
+}
 
 .btn--lg {
   padding: 0.85rem 2rem;
