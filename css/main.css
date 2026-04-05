@@ -226,7 +226,11 @@ body {
    Hero
    ============================================ */
 .hero {
-  padding-block: clamp(4rem, 12vw, 8rem);
+  width: 100%;
+  min-height: calc(100dvh - 88px);
+  display: flex;
+  align-items: center;
+  padding-block: var(--space-16);
 }
 
 .hero__eyebrow {
