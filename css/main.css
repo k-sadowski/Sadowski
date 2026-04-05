@@ -50,10 +50,14 @@ body {
 }
 
 .btn--primary {
-  background: var(--color-accent);
+  background: linear-gradient(135deg, #e8622a 0%, var(--color-accent) 100%);
+  box-shadow: var(--shadow-accent);
   color: #fff;
 }
-.btn--primary:hover { background: var(--color-accent-hover); }
+.btn--primary:hover {
+  background: linear-gradient(135deg, #d4541f 0%, var(--color-accent-hover) 100%);
+  box-shadow: 0 4px 16px var(--color-accent-glow);
+}
 
 .btn--ghost {
   background: transparent;
@@ -123,9 +127,10 @@ body {
 }
 .nav__menu-btn span {
   display: block;
-  width: 22px;
-  height: 2px;
+  width: 28px;
+  height: 3px;
   background: var(--color-text);
+  border-radius: 2px;
   transition: transform var(--transition-base), opacity var(--transition-base);
 }
 
@@ -205,7 +210,6 @@ body {
   text-decoration: none;
   color: var(--color-text-muted);
   padding-block: var(--space-3);
-  border-bottom: 1px solid var(--color-border);
   transition: color var(--transition-fast);
 }
 .drawer__links a:hover { color: var(--color-text); }
