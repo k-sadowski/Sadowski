@@ -253,6 +253,30 @@ body {
   align-items: center;
 }
 
+.hero__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-16);
+  align-items: center;
+  padding-block: var(--space-16);
+}
+
+.hero__visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .hero__inner {
+    grid-template-columns: 1fr;
+    padding-block: var(--space-12);
+  }
+  .hero__visual {
+    display: none;
+  }
+}
+
 .hero__eyebrow {
   font-size: var(--text-sm);
   font-weight: var(--weight-medium);
@@ -523,4 +547,360 @@ body {
   text-align: center;
   font-size: var(--text-sm);
   color: var(--color-text-muted);
+}
+
+/* ============================================
+   MacBook Mockup
+   ============================================ */
+.macbook {
+  width: 100%;
+  max-width: 480px;
+  filter: drop-shadow(0 24px 48px rgba(0, 0, 0, 0.13));
+}
+
+.macbook__lid {
+  background: #c8c7c5;
+  border-radius: 10px 10px 2px 2px;
+  padding: 8px 8px 0;
+}
+
+.macbook__screen-bezel {
+  background: #1a1a1a;
+  border-radius: 6px 6px 0 0;
+  overflow: hidden;
+}
+
+.macbook__chrome {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 8px;
+  background: #efefef;
+  border-bottom: 1px solid #ddd;
+}
+
+.macbook__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.macbook__dot--red    { background: #ff5f57; }
+.macbook__dot--yellow { background: #ffbd2e; }
+.macbook__dot--green  { background: #28c840; }
+
+.macbook__address-bar {
+  flex: 1;
+  height: 12px;
+  background: #e0e0e0;
+  border-radius: 3px;
+  margin-inline: 6px;
+}
+
+.macbook__viewport {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #f5f4f2;
+}
+
+.macbook__base {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.macbook__hinge {
+  width: 18%;
+  height: 5px;
+  background: #a8a7a5;
+  border-radius: 0 0 3px 3px;
+}
+
+.macbook__bottom {
+  width: 100%;
+  height: 10px;
+  background: linear-gradient(to bottom, #c8c7c5, #a8a7a5);
+  border-radius: 0 0 6px 6px;
+}
+
+/* Slide crossfade animation */
+.macbook__slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  animation: saas-fade 15s infinite;
+}
+.macbook__slide:nth-child(1) { animation-delay: 0s; }
+.macbook__slide:nth-child(2) { animation-delay: 5s; }
+.macbook__slide:nth-child(3) { animation-delay: 10s; }
+
+@keyframes saas-fade {
+  0%    { opacity: 0; }
+  7%    { opacity: 1; }  /* ~1s fade in */
+  27%   { opacity: 1; }  /* hold for ~3s */
+  33%   { opacity: 0; }  /* ~1s fade out */
+  100%  { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .macbook__slide { animation: none; opacity: 0; }
+  .macbook__slide:nth-child(1) { opacity: 1; }
+}
+
+/* ============================================
+   Mock SaaS UI (inside MacBook slides)
+   ============================================ */
+.mock {
+  display: flex;
+  height: 100%;
+  background: #f8f7f5;
+}
+
+.mock__sidebar {
+  width: 14%;
+  background: #1e1e1e;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px 6px;
+  flex-shrink: 0;
+}
+
+.mock__logo-area {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  background: var(--color-accent);
+  margin-bottom: 8px;
+}
+
+.mock__nav-item {
+  height: 5px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.mock__nav-item--active {
+  background: rgba(255, 255, 255, 0.65);
+  width: 80%;
+}
+
+.mock__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 8px 10px;
+  gap: 5px;
+  overflow: hidden;
+}
+
+.mock__topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2px;
+}
+
+.mock__page-title {
+  width: 70px;
+  height: 7px;
+  background: #1a1a1a;
+  border-radius: 3px;
+}
+
+.mock__topbar-action {
+  width: 36px;
+  height: 13px;
+  border-radius: 3px;
+  background: var(--color-accent);
+}
+
+/* Metric cards */
+.mock__metrics-row {
+  display: flex;
+  gap: 5px;
+}
+
+.mock__metric {
+  flex: 1;
+  background: #fff;
+  border: 1px solid #ebe7e4;
+  border-radius: 4px;
+  padding: 6px;
+}
+
+.mock__metric-val {
+  width: 36px;
+  height: 9px;
+  background: #1a1a1a;
+  border-radius: 2px;
+  margin-bottom: 4px;
+}
+
+.mock__metric-val--accent {
+  background: var(--color-accent);
+}
+
+.mock__metric-label {
+  width: 26px;
+  height: 4px;
+  background: #d0cec8;
+  border-radius: 2px;
+}
+
+/* Bar chart */
+.mock__chart {
+  flex: 1;
+  background: #fff;
+  border: 1px solid #ebe7e4;
+  border-radius: 4px;
+  padding: 8px 8px 4px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.mock__bar-group {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  width: 100%;
+  height: 100%;
+}
+
+.mock__bar {
+  flex: 1;
+  height: var(--bar-h, 50%);
+  background: #d0cec8;
+  border-radius: 2px 2px 0 0;
+}
+
+.mock__bar--accent { background: var(--color-accent); opacity: 0.75; }
+
+/* Task rows */
+.mock__task-row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 5px;
+  background: #fff;
+  border: 1px solid #ebe7e4;
+  border-radius: 4px;
+}
+
+.mock__task-row--active {
+  border-color: var(--color-accent);
+  background: rgba(201, 75, 44, 0.04);
+}
+
+.mock__task-check {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: 1.5px solid #ccc;
+  flex-shrink: 0;
+}
+
+.mock__task-check--done {
+  background: #28c840;
+  border-color: #28c840;
+}
+
+.mock__task-text {
+  height: 5px;
+  background: #d0cec8;
+  border-radius: 2px;
+}
+
+.mock__task-text--done { opacity: 0.35; }
+
+/* Badges */
+.mock__badge {
+  height: 11px;
+  width: 30px;
+  border-radius: 99px;
+  flex-shrink: 0;
+}
+.mock__badge--green  { background: rgba(40, 200, 64, 0.22); }
+.mock__badge--yellow { background: rgba(255, 189, 46, 0.32); }
+.mock__badge--blue   { background: rgba(88, 130, 230, 0.22); }
+.mock__badge--accent { background: rgba(201, 75, 44, 0.22); }
+.mock__badge--gray   { background: rgba(0, 0, 0, 0.08); }
+
+/* CRM table */
+.mock__table {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  overflow: hidden;
+}
+
+.mock__table-head {
+  display: flex;
+  gap: 5px;
+  padding: 3px 5px;
+  align-items: center;
+}
+
+.mock__th {
+  flex: 1;
+  height: 4px;
+  background: #d0cec8;
+  border-radius: 2px;
+}
+
+.mock__table-row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px;
+  background: #fff;
+  border: 1px solid #ebe7e4;
+  border-radius: 4px;
+}
+
+.mock__td-user {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: 2;
+}
+
+.mock__avatar {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.mock__avatar--a { background: var(--color-accent); }
+.mock__avatar--b { background: #5b8fe8; }
+.mock__avatar--c { background: #28c840; }
+
+.mock__user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.mock__user-name {
+  height: 5px;
+  background: #1a1a1a;
+  border-radius: 2px;
+  width: 55px;
+}
+
+.mock__user-sub {
+  height: 4px;
+  background: #d0cec8;
+  border-radius: 2px;
+  width: 36px;
+}
+
+.mock__td-text {
+  flex: 1;
+  height: 5px;
+  background: #d0cec8;
+  border-radius: 2px;
 }
