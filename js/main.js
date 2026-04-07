@@ -48,3 +48,32 @@ const header = document.getElementById('site-header');
 window.addEventListener('scroll', () => {
   header?.classList.toggle('scrolled', window.scrollY > 10);
 }, { passive: true });
+
+// Scroll-drawn arrow
+(function () {
+  const path = document.getElementById('scroll-arrow-path');
+  const head = document.getElementById('scroll-arrow-head');
+  const target = document.getElementById('companies');
+  if (!path || !target) return;
+
+  const length = path.getTotalLength();
+  path.style.strokeDasharray = length;
+  path.style.strokeDashoffset = length;
+
+  function update() {
+    const rect = target.getBoundingClientRect();
+    const vh = window.innerHeight;
+    // Begin drawing when companies section is 90% down the viewport,
+    // finish when it reaches 40% from the top
+    const start = vh * 0.9;
+    const end = vh * 0.4;
+    const progress = Math.max(0, Math.min(1, (start - rect.top) / (start - end)));
+
+    path.style.strokeDashoffset = length * (1 - progress);
+    // Fade arrowhead in during the last 15% of the draw
+    if (head) head.style.opacity = progress > 0.85 ? ((progress - 0.85) / 0.15) : 0;
+  }
+
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+}());
